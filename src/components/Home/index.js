@@ -37,7 +37,7 @@ class Home extends Component {
     homeVideos: [],
     apiStatus: apiStatusConstants.initial,
     searchInput: '',
-    bannerDisplay: 'flex',
+    bannerDisplay: true,
   }
 
   componentDidMount() {
@@ -92,7 +92,7 @@ class Home extends Component {
 
   renderFailureView = () => <FailureView onRetry={this.onRetry} />
 
-  onCloseBanner = () => this.setState({bannerDisplay: 'none'})
+  onCloseBanner = () => this.setState({bannerDisplay: false})
 
   onChangeSearchInput = event => {
     this.setState({searchInput: event.target.value})
@@ -130,7 +130,7 @@ class Home extends Component {
 
           const bgColor = isDarkTheme ? '#181818' : '#f9f9f9'
           const textColor = isDarkTheme ? '#f9f9f9' : ' #231f20'
-          const display = bannerDisplay === 'flex' ? 'flex' : 'none'
+          const display = bannerDisplay === true ? 'flex' : 'none'
           const searchIconBgColor = isDarkTheme ? '#424242' : '#ebebeb'
 
           return (
@@ -138,7 +138,8 @@ class Home extends Component {
               <Header />
               <NavigationBar />
               <HomeViewContainer bgColor={bgColor} data-testid="home">
-                <BannerContainer data-testid="banner" display={display}>
+            {bannerDisplay ? (
+              <BannerContainer data-testid="banner" display={display}>
                   <BannerLeftPart>
                     <BannerLogoImage
                       src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
@@ -159,6 +160,7 @@ class Home extends Component {
                     </BannerCloseButton>
                   </BannerRightPart>
                 </BannerContainer>
+            ): null}
                 <SearchContainer>
                   <SearchInputBox
                     type="search"
