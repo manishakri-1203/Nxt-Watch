@@ -5,15 +5,14 @@ import {
   VideoLink,
   VideoItem,
   ThumbnailImage,
-  MobileVideoDetailsContainer,
-  ProfileImgage,
+  VideoDetailsContainer,
+  ProfileImage,
   ContentSection,
   VideoTitle,
   DateAndViewsCountContainer,
   ChannelName,
   ViewsText,
   DateText,
-  DesktopVideoDetailsContainer,
 } from './styledComponents'
 
 const VideoCard = props => (
@@ -37,8 +36,8 @@ const VideoCard = props => (
         <VideoLink to={`/videos/${id}`}>
           <VideoItem>
             <ThumbnailImage src={thumbnailUrl} alt="video thumbnail" />
-            <MobileVideoDetailsContainer>
-              <ProfileImgage src={profileImageUrl} alt="channel logo" />
+            <VideoDetailsContainer>
+              <ProfileImage src={profileImageUrl} alt="channel logo" />
               <ContentSection>
                 <VideoTitle color={titleColor}>{title}</VideoTitle>
                 <DateAndViewsCountContainer>
@@ -49,16 +48,7 @@ const VideoCard = props => (
                   <DateText>{publishedAt}</DateText>
                 </DateAndViewsCountContainer>
               </ContentSection>
-            </MobileVideoDetailsContainer>
-            <DesktopVideoDetailsContainer>
-              <VideoTitle color={titleColor}>{title}</VideoTitle>
-              <ChannelName>{name}</ChannelName>
-              <DateAndViewsCountContainer>
-                <ViewsText>{viewCount} views</ViewsText>
-                <BsDot color="#475569" size={25} />
-                <DateText>{publishedAt}</DateText>
-              </DateAndViewsCountContainer>
-            </DesktopVideoDetailsContainer>
+            </VideoDetailsContainer>
           </VideoItem>
         </VideoLink>
       )

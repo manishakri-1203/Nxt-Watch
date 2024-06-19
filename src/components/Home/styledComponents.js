@@ -41,7 +41,6 @@ export const BannerText = styled.p`
   line-height: 1.5;
   @media screen and (min-width: 576px) {
     font-size: 20px;
-    width: 420px;
   }
 `
 

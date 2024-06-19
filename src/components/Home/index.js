@@ -145,7 +145,7 @@ class Home extends Component {
                       alt="nxt watch logo"
                     />
                     <BannerText>
-                      Buy Nxt Watch Premium prepaid plans with UPI
+                      Buy Nxt Watch Premium prepaid plans with <br /> UPI
                     </BannerText>
                     <BannerButton type="button">GET IT NOW</BannerButton>
                   </BannerLeftPart>

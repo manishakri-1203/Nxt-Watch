@@ -23,15 +23,12 @@ export const ThumbnailImage = styled.img`
   }
 `
 
-export const MobileVideoDetailsContainer = styled.div`
+export const VideoDetailsContainer = styled.div`
   display: flex;
   align-items: center;
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
 `
 
-export const ProfileImgage = styled.img`
+export const ProfileImage = styled.img`
   width: 40px;
   height: 40px;
   margin-left: 10px;
@@ -80,10 +77,4 @@ export const DateText = styled.p`
   color: #475569;
   font-family: 'Roboto';
   font-size: 14px;
-`
-export const DesktopVideoDetailsContainer = styled.div`
-  margin-left: 16px;
-  @media screen and (max-width: 767px) {
-    display: none;
-  }
 `
